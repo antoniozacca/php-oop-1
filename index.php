@@ -2,9 +2,8 @@
 class Movie {
    private $nome;
    private $genere;
-   function __construct($_nome)
-   {
-    $this->nome=$_nome;
+   function setNome($_nome){
+      $this->nome=$_nome;
    }
    function getNome(){
       return $this->nome;
@@ -16,7 +15,9 @@ class Movie {
       return $this->genere;
    }
 }
-$film= new Movie('the wolf of wall street');
+$film = new Movie();
+$film->setNome('the wolf of wall street');
 echo $film->getNome();
+echo "<br>";
 $film->setGenere('commedia');
 echo $film->getGenere();
