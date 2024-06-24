@@ -1,7 +1,7 @@
 <?php
 class Movie {
    private $nome;
-   private $genere;
+   private $genere = [];
    private $voto;
    function setNome($_nome){
       $this->nome=$_nome;
@@ -10,7 +10,7 @@ class Movie {
       return $this->nome;
    }
    function setGenere($_genere){
-      $this->genere=$_genere;
+      $this->genere[]=$_genere;
    }
    function getGenere(){
       return $this->genere;
@@ -39,7 +39,8 @@ $film->setNome('the wolf of wall street');
 echo $film->getNome();
 echo "<br>";
 $film->setGenere('commedia');
-echo $film->getGenere();
+$film->setGenere('drammatico');
+echo implode(',', $film->getGenere());
 echo "<br>";
 try {
    $film->setVoto(1);
