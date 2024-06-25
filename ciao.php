@@ -50,20 +50,20 @@ class Movie {
     }
 }
 
-
+// Creazione di un oggetto Movie
 $film = new Movie();
 $film->setNome('The Wolf of Wall Street');
 
-
+// Aggiunta di generi
 $film->addGenere('Commedia');
 $film->addGenere('Biografico');
 $film->addGenere('Drammatico');
 
-
+// Aggiunta di attori
 $film->addActor(new Actor('Leonardo DiCaprio'));
 $film->addActor(new Actor('Jonah Hill'));
 
-
+// Visualizzazione delle informazioni
 echo $film->getNome() ?? 'Nome non disponibile';
 echo "<br>";
 echo implode(', ', $film->getGeneri() ?? ['Generi non disponibili']);
@@ -79,6 +79,6 @@ if ($actors) {
     echo "Attori non disponibili<br>";
 }
 
-
+// Visualizzazione del totale dei film creati
 echo "Totale film creati: " . Movie::getTotalMovies();
 ?>
